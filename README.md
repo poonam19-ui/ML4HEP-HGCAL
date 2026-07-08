@@ -1,6 +1,6 @@
 # ML4HEP-HGCAL
 
-A tutorial-oriented collection of notebooks for HGCAL regression studies. The notebooks walk through the full workflow: reading the raw HDF5 event sample, flattening it into tabular features, training baseline regressors, and experimenting with graph neural networks and dense neural networks.
+A tutorial-oriented collection of notebooks for HGCAL regression studies. The notebooks walk through the full workflow: reading the raw HDF5 event sample, flattening it into tabular features, training baseline regressors, and experimenting with graph neural networks and dense neural networks. This will setup the baseline for your own experiments with the HGCAL dataset, demonstrating what a naive implementation of each of these model architectures can achieve. The goal of the exercise would be to improve upon the baseline models.
 
 ## Notebook guide
 
@@ -18,6 +18,7 @@ A tutorial-oriented collection of notebooks for HGCAL regression studies. The no
 2. Move to `02_hgcal_event_summary_and_baseline.ipynb` or `03_hgcal_gradient_boosting_regression.ipynb` to see baseline tabular models.
 3. Open `04_hgcal_dense_nn_regression.ipynb` to compare a small dense network against the baseline.
 4. Finish with `05_hgcal_gnn_experiments.ipynb` for the graph-based experiments.
+5. Now, that the baseline experiments are complete, try modifying the models, hyper-parameters (maybe Hyper-parameter tuning), and other new architectures you learnt in the school to see if you can improve the performance of the models. You can also try to implement your own architecture and compare it with the existing ones.
 
 ## Data
 
@@ -60,19 +61,20 @@ The notebooks rely on the usual scientific Python stack plus the ML libraries us
 - HGCAL electron sample on Zenodo: https://zenodo.org/records/7864471
 - HGCAL project documentation and motivation: use the links in the dataset page and the notebook comments as the starting point for the tutorial flow.
 
-### Library documentation
+### Package installation
+Something like the following should work in a conda environment:
 
-- NumPy: https://numpy.org/doc/
-- pandas: https://pandas.pydata.org/docs/
-- Matplotlib: https://matplotlib.org/stable/
-- Seaborn: https://seaborn.pydata.org/
-- h5py: https://docs.h5py.org/en/stable/
-- scikit-learn: https://scikit-learn.org/stable/
-- TensorFlow / Keras: https://www.tensorflow.org/api_docs
-- PyTorch: https://pytorch.org/docs/stable/index.html
-- PyTorch Geometric: https://pytorch-geometric.readthedocs.io/
-- statsmodels: https://www.statsmodels.org/stable/
-- Awkward Array: https://awkward-array.org/doc/main/
+```bash
+micromamba create -n myenv \
+    -c conda-forge \
+    -c pytorch \
+    python=3.12 \
+    numpy pandas matplotlib seaborn scikit-learn \
+    h5py awkward statsmodels tensorflow \
+    pytorch pytorch-cuda=12.4 \
+    torch-geometric
+```
+Make sure to check the [PyTorch Geometric installation guide](https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html) for the correct version of `torch-scatter`, `torch-sparse`, and `torch-geometric` for your PyTorch version, also and your CUDA version if you are using a GPU and any more packages you may need for your experiments (later).
 
 ### Notebook workflow tips
 
@@ -86,4 +88,4 @@ This repository is a collaborative HGCAL tutorial project. Original credits from
 
 > Input files source: https://zenodo.org/records/7864471
 >
-> Work done collaboratively by Avik Das, Chetan Agrawal, Divyajyoti Pandey, Kuldeep Kumar Pal, Kumar Tanay, Manas Ranjan Sahoo, Rahul Kumar Agrawal, Rohit Kumar Singh, Samarendra Nayak, Sandeep Pradhan, Sneh Shuchi, Subhalaxmi Rout, Vatsal Sinha
+> Work done collaboratively by Avik Das, Chetan Agrawal, Divyajyoti Pandey, Kuldeep Kumar Pal, Kumar Tanay, Manas Ranjan Sahoo, Rahul Kumar Agrawal, Rohit Kumar Singh, Samarendra Nayak, Sandeep Pradhan, Sneh Shuchi, Subhalaxmi Rout, Vatsal Sinha in the guidance of Dr. Rajdeep Mohan Chatterjee.

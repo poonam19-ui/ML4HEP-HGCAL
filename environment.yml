@@ -1,0 +1,49 @@
+name: DRN2
+channels:
+  - comet_ml
+  - conda-forge
+dependencies:
+  - conda-forge::astropy
+  - comet_ml
+  - fastapi
+  - h5py
+  - conda-forge::hist
+  - ipykernel
+  - matplotlib
+  - mplhep
+  - neptune
+  - networkx
+  - conda-forge::omegaconf
+  - conda-forge::optuna
+  - conda-forge::pacmap
+  - pandas
+  - pandoc-crossref
+  - plotly
+  - pyarrow
+  - pyg-lib
+  - python
+  - pytorch
+  - pytorch_cluster
+  - pytorch_geometric
+  - pytorch_sparse
+  - pytorch_spline_conv
+  - conda-forge::r-quarto
+  - conda-forge::reportlab
+  - conda-forge::root
+  - scikit-learn
+  - conda-forge::scikit-optimize
+  - torch-scatter
+  - torchaudio
+  - torchvision
+  - conda-forge::uncertainties
+  - uproot
+  - uvicorn
+  - conda-forge::vector
+  - conda-forge::zuko
+  - pip:
+    - protobuf==7.34.1
+    - sentry-sdk==2.58.0
+    - wandb==0.26.0
+    - wget==3.2
+
+prefix: "/home/avik/micromamba/envs/DRN2"
