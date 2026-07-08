@@ -33,7 +33,7 @@ The notebooks expect HGCAL samples derived from the Zenodo release linked below.
 Place the required files in the repository root, or update the `Path(...)` variables at the top of the notebooks if you keep the data elsewhere.
 
 ## Package installation
-Something like the following should work in a conda environment:
+Something like the following should work if micromamba is installed. You may need to adjust the package versions for your system and CUDA version.:
 
 ```bash
 micromamba create -n myenv \
