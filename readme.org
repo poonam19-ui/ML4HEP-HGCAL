@@ -1,4 +1,10 @@
+#+title: ML4HEP-HGCAL
+
+This repository now uses =README.md= as the main tutorial overview. See that file for the notebook guide and data instructions.
+
 * Input Files
 https://zenodo.org/records/7864471
-* Work done colaboratively by 
+
+* Work done colaboratively by
 Avik Das, Chetan Agrawal, Divyajyoti Pandey, Kuldeep Kumar Pal, Kumar Tanay, Manas Ranjan Sahoo, Rahul Kumar Agrawal, Rohit Kumar Singh, Samarendra Nayak, Sandeep Pradhan, Sneh Shuchi, Subhalaxmi Rout, Vatsal Sinha
+
