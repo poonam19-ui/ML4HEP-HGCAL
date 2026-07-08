@@ -32,36 +32,7 @@ The notebooks expect HGCAL samples derived from the Zenodo release linked below.
 
 Place the required files in the repository root, or update the `Path(...)` variables at the top of the notebooks if you keep the data elsewhere.
 
-## Environment
-
-The notebooks rely on the usual scientific Python stack plus the ML libraries used in each experiment. A typical environment includes:
-
-- numpy
-- pandas
-- matplotlib
-- seaborn
-- scikit-learn
-- h5py
-- awkward
-- statsmodels
-- tensorflow
-- torch
-- torch-geometric
-
-## Notes for tutorial readers
-
-- The notebooks use markdown sections to separate the major steps.
-- File paths are relative so the examples are easier to run on a new machine.
-- Some notebooks intentionally keep multiple model variants side by side so you can compare architecture choices quickly.
-
-## Reference and further reading
-
-### Data and project background
-
-- HGCAL electron sample on Zenodo: https://zenodo.org/records/7864471
-- HGCAL project documentation and motivation: use the links in the dataset page and the notebook comments as the starting point for the tutorial flow.
-
-### Package installation
+## Package installation
 Something like the following should work in a conda environment:
 
 ```bash
@@ -75,6 +46,19 @@ micromamba create -n myenv \
     torch-geometric
 ```
 Make sure to check the [PyTorch Geometric installation guide](https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html) for the correct version of `torch-scatter`, `torch-sparse`, and `torch-geometric` for your PyTorch version, also and your CUDA version if you are using a GPU and any more packages you may need for your experiments (later).
+
+## Notes for tutorial readers
+
+- The notebooks use markdown sections to separate the major steps.
+- File paths are relative so the examples are easier to run on a new machine.
+- Some notebooks intentionally keep multiple model variants side by side so you can compare architecture choices quickly.
+
+## Reference and further reading
+
+### Data and project background
+
+- HGCAL electron sample on Zenodo: https://zenodo.org/records/7864471
+
 
 ### Notebook workflow tips
 
