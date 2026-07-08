@@ -2,15 +2,22 @@
 
 A tutorial-oriented collection of notebooks for HGCAL regression studies. The notebooks walk through the full workflow: reading the raw HDF5 event sample, flattening it into tabular features, training baseline regressors, and experimenting with graph neural networks and dense neural networks.
 
-## What is in this repository?
+## Notebook guide
 
 | Notebook | Purpose |
 | --- | --- |
-| `hgcal-feature-csv.ipynb` | Convert the raw HDF5 event sample into a flat CSV with one row per event. |
-| `HGCAL-PROJECT-MLIOPB(1).ipynb` | Inspect the raw event arrays, build a tabular summary, and train a gradient-boosting baseline. |
-| `HGCAL_regression_XGBoost.ipynb` | Train and evaluate a gradient-boosting regressor on the layer-summed features. |
-| `DNN_50K_train_full_data_test.ipynb` | Train a dense neural network on the tabular features and evaluate it on held-out and additional data. |
-| `gnn_final(1).ipynb` | Compare several graph-construction strategies for a GCN regressor. |
+| `01_hgcal_flatten_to_csv.ipynb` | Convert the raw HDF5 event sample into a flat CSV with one row per event. |
+| `02_hgcal_event_summary_and_baseline.ipynb` | Inspect the raw event arrays, build a tabular summary, and train a gradient-boosting baseline. |
+| `03_hgcal_gradient_boosting_regression.ipynb` | Train and evaluate a gradient-boosting regressor on the layer-summed features. |
+| `04_hgcal_dense_nn_regression.ipynb` | Train a dense neural network on the tabular features and evaluate it on held-out and additional data. |
+| `05_hgcal_gnn_experiments.ipynb` | Compare several graph-construction strategies for a GCN regressor. |
+
+## Suggested reading order
+
+1. Start with `01_hgcal_flatten_to_csv.ipynb` to understand how the raw HDF5 file is flattened.
+2. Move to `02_hgcal_event_summary_and_baseline.ipynb` or `03_hgcal_gradient_boosting_regression.ipynb` to see baseline tabular models.
+3. Open `04_hgcal_dense_nn_regression.ipynb` to compare a small dense network against the baseline.
+4. Finish with `05_hgcal_gnn_experiments.ipynb` for the graph-based experiments.
 
 ## Data
 
@@ -23,15 +30,6 @@ The notebooks expect HGCAL samples derived from the Zenodo release linked below.
 - `true_test_DNN_15K.csv`
 
 Place the required files in the repository root, or update the `Path(...)` variables at the top of the notebooks if you keep the data elsewhere.
-
-Input files source: https://zenodo.org/records/7864471
-
-## Suggested reading order
-
-1. Start with `hgcal-feature-csv.ipynb` to understand how the raw HDF5 file is flattened.
-2. Move to `HGCAL-PROJECT-MLIOPB(1).ipynb` or `HGCAL_regression_XGBoost.ipynb` to see baseline tabular models.
-3. Open `DNN_50K_train_full_data_test.ipynb` to compare a small dense network against the baseline.
-4. Finish with `gnn_final(1).ipynb` for the graph-based experiments.
 
 ## Environment
 
@@ -51,11 +49,41 @@ The notebooks rely on the usual scientific Python stack plus the ML libraries us
 
 ## Notes for tutorial readers
 
-- The notebooks now use markdown sections to separate the major steps.
+- The notebooks use markdown sections to separate the major steps.
 - File paths are relative so the examples are easier to run on a new machine.
 - Some notebooks intentionally keep multiple model variants side by side so you can compare architecture choices quickly.
+
+## Reference and further reading
+
+### Data and project background
+
+- HGCAL electron sample on Zenodo: https://zenodo.org/records/7864471
+- HGCAL project documentation and motivation: use the links in the dataset page and the notebook comments as the starting point for the tutorial flow.
+
+### Library documentation
+
+- NumPy: https://numpy.org/doc/
+- pandas: https://pandas.pydata.org/docs/
+- Matplotlib: https://matplotlib.org/stable/
+- Seaborn: https://seaborn.pydata.org/
+- h5py: https://docs.h5py.org/en/stable/
+- scikit-learn: https://scikit-learn.org/stable/
+- TensorFlow / Keras: https://www.tensorflow.org/api_docs
+- PyTorch: https://pytorch.org/docs/stable/index.html
+- PyTorch Geometric: https://pytorch-geometric.readthedocs.io/
+- statsmodels: https://www.statsmodels.org/stable/
+- Awkward Array: https://awkward-array.org/doc/main/
+
+### Notebook workflow tips
+
+- Use the notebook titles and section headers as a quick map of each workflow.
+- Run the notebooks top-to-bottom the first time to build the intermediate files.
+- Revisit the markdown sections when you want to understand the purpose of a code block before editing it.
 
 ## Acknowledgements
 
 This repository is a collaborative HGCAL tutorial project. Original credits from the repository are preserved below.
 
+> Input files source: https://zenodo.org/records/7864471
+>
+> Work done collaboratively by Avik Das, Chetan Agrawal, Divyajyoti Pandey, Kuldeep Kumar Pal, Kumar Tanay, Manas Ranjan Sahoo, Rahul Kumar Agrawal, Rohit Kumar Singh, Samarendra Nayak, Sandeep Pradhan, Sneh Shuchi, Subhalaxmi Rout, Vatsal Sinha
